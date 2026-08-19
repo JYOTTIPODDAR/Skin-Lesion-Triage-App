@@ -1,4 +1,6 @@
-from fastapi import APIRouter
+
+
+from fastapi import APIRouter,HTTPException,status
 from pwdlib import PasswordHash
 
 from schemas.auth import UserRegister
@@ -14,7 +16,7 @@ router = APIRouter(
 password_hash = PasswordHash.recommended()
 
 
-@router.post("/register")
+@router.post("/register",status_code=status.HTTP_201_CREATED)
 def register(user: UserRegister):
     db = SessionLocal()
 
@@ -22,7 +24,10 @@ def register(user: UserRegister):
 
     if existing_user:
         db.close()
-        return {"message": "Email already registered"}
+        raise HTTPException(
+        status_code=409,
+        detail="Email already registered"
+    )
 
     hashed_password = password_hash.hash(user.password)
 

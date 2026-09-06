@@ -105,6 +105,11 @@ a {
     font-size: 16px;
     font-weight: 600;
     transition: 0.3s;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .nav-btn:hover {

@@ -1,0 +1,561 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #18323a;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 52% 48%;
+}
+
+
+/* ================= LEFT SIDE ================= */
+
+.auth-left {
+    position: relative;
+    min-height: 100vh;
+    padding: 40px 8%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 80% 45%, rgba(255,255,255,0.35), transparent 30%),
+        linear-gradient(135deg, #d8f3ed, #b9e3dc);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: #18323a;
+}
+
+.logo-icon {
+    width: 68px;
+    height: 68px;
+
+    border: 2px solid #16796f;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+    color: #16796f;
+}
+
+.logo h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #3f5960;
+}
+
+
+/* LEFT CONTENT */
+
+.left-content {
+    margin-top: 70px;
+    max-width: 600px;
+}
+
+.ai-badge {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    background: rgba(255,255,255,0.5);
+    border-radius: 30px;
+
+    color: #176e67;
+    font-weight: 600;
+
+    margin-bottom: 35px;
+}
+
+.left-content h1 {
+    font-size: clamp(55px, 5vw, 80px);
+    line-height: 1.05;
+
+    margin-bottom: 28px;
+
+    letter-spacing: -2px;
+}
+
+.left-content h1 span {
+    display: block;
+    color: #197e73;
+}
+
+.left-description {
+    max-width: 520px;
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    color: #405a61;
+
+    margin-bottom: 40px;
+}
+
+
+/* BENEFITS */
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.benefit-icon {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.65);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.benefit h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.benefit p {
+    color: #536c72;
+    font-size: 15px;
+}
+
+
+/* BOTTOM TEXT */
+
+.health-text {
+    position: absolute;
+
+    bottom: 50px;
+    left: 12%;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    font-style: italic;
+
+    color: #477277;
+
+    transform: rotate(-8deg);
+}
+
+
+/* ================= RIGHT SIDE ================= */
+
+.auth-right {
+    position: relative;
+
+    min-height: 100vh;
+
+    background: #f8fbfa;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 40px 40px;
+}
+
+
+/* BACK BUTTON */
+
+.back-home {
+    position: absolute;
+
+    top: 45px;
+    right: 70px;
+
+    text-decoration: none;
+
+    color: #405a61;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    color: #087d72;
+}
+
+
+/* AUTH BOX */
+
+.auth-box {
+    width: 100%;
+    max-width: 630px;
+
+    padding: 60px 50px;
+
+    background: white;
+
+    border: 1px solid #e2ece9;
+
+    border-radius: 28px;
+
+    box-shadow: 0 15px 45px rgba(15, 80, 70, 0.08);
+}
+
+.auth-box > h1 {
+    text-align: center;
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+.auth-subtitle {
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #5d747a;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================= TABS ================= */
+
+.tabs {
+    display: flex;
+
+    background: #eef4f2;
+
+    padding: 5px;
+
+    border-radius: 16px;
+
+    margin-bottom: 30px;
+}
+
+.tab {
+    flex: 1;
+
+    padding: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    color: #334c53;
+}
+
+.tab.active {
+    background: #168278;
+
+    color: white;
+
+    box-shadow: 0 5px 15px rgba(0, 100, 90, 0.18);
+}
+
+
+/* ================= FORM ================= */
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
+    color: #273f46;
+}
+
+.input-box {
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #cfdedb;
+
+    border-radius: 15px;
+
+    padding: 0 18px;
+
+    margin-bottom: 22px;
+
+    transition: 0.3s;
+}
+
+.input-box:focus-within {
+    border-color: #168278;
+
+    box-shadow: 0 0 0 3px rgba(22,130,120,0.08);
+}
+
+.input-box span {
+    margin-right: 14px;
+
+    font-size: 19px;
+}
+
+.input-box input {
+    width: 100%;
+
+    padding: 17px 0;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    background: transparent;
+}
+
+
+/* FORGOT */
+
+.forgot {
+    text-align: right;
+
+    margin-top: -8px;
+
+    margin-bottom: 25px;
+}
+
+.forgot a {
+    color: #18776e;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+/* MAIN BUTTON */
+
+.main-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(90deg, #187e74, #159185);
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 20px rgba(10, 120, 110, 0.2);
+}
+
+
+/* DIVIDER */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+.divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background: #d8e3e0;
+}
+
+.divider p {
+    color: #61767b;
+
+    font-size: 14px;
+}
+
+
+/* SOCIAL BUTTONS */
+
+.social-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #d4e0dd;
+
+    border-radius: 15px;
+
+    background: white;
+
+    margin-bottom: 14px;
+
+    font-size: 16px;
+
+    color: #263e45;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: #f3f8f6;
+}
+
+.social-btn b {
+    margin-right: 14px;
+
+    font-size: 20px;
+}
+
+
+/* SWITCH TEXT */
+
+.switch-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #60757a;
+
+    font-size: 16px;
+}
+
+.switch-text span {
+    color: #16796f;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* HIDDEN */
+
+.hidden {
+    display: none;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-left {
+        min-height: auto;
+
+        padding-bottom: 80px;
+    }
+
+    .health-text {
+        display: none;
+    }
+
+    .auth-right {
+        min-height: auto;
+
+        padding: 100px 30px 50px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .auth-left {
+        padding: 30px 7%;
+    }
+
+    .left-content {
+        margin-top: 50px;
+    }
+
+    .left-content h1 {
+        font-size: 48px;
+    }
+
+    .left-description {
+        font-size: 17px;
+    }
+
+    .benefit-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .auth-right {
+        padding: 80px 15px 30px;
+    }
+
+    .back-home {
+        top: 25px;
+        right: 25px;
+    }
+
+    .auth-box {
+        padding: 35px 20px;
+
+        border-radius: 22px;
+    }
+
+    .auth-box > h1 {
+        font-size: 30px;
+    }
+
+}

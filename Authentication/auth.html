@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkinTriage | Authentication</title>
+
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <section class="auth-left">
+
+            <!-- Logo -->
+
+            <a href="../LandingPage/index.html" class="logo">
+
+                <div class="logo-icon">◇</div>
+
+                <div>
+                    <h2>SkinTriage</h2>
+                    <p>Assess. Understand. Take Action.</p>
+                </div>
+
+            </a>
+
+
+            <!-- Main Content -->
+
+            <div class="left-content">
+
+                <div class="ai-badge">
+                    ✨ AI-Powered Skin Health Platform
+                </div>
+
+                <h1>
+                    Your Skin Health,
+                    <span>Our Priority.</span>
+                </h1>
+
+                <p class="left-description">
+                    Join SkinTriage to get personalized insights,
+                    track your assessments, and take proactive
+                    steps towards healthier skin.
+                </p>
+
+
+                <!-- Benefits -->
+
+                <div class="benefits">
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">🛡</div>
+
+                        <div>
+                            <h3>Secure & Private</h3>
+                            <p>Your data is protected</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">🧠</div>
+
+                        <div>
+                            <h3>AI-Assisted Insights</h3>
+                            <p>Get reliable preliminary assessments</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">♡</div>
+
+                        <div>
+                            <h3>Better Skin Health</h3>
+                            <p>Make informed decisions</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Decorative Bottom Text -->
+
+            <div class="health-text">
+                Healthier Skin<br>
+                Brighter Tomorrow
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <section class="auth-right">
+
+            <a href="../LandingPage/index.html" class="back-home">
+                ← Back to Home
+            </a>
+
+
+            <div class="auth-box">
+
+                <h1>Welcome to SkinTriage</h1>
+
+                <p class="auth-subtitle">
+                    Sign in to continue your skin health journey.
+                </p>
+
+
+                <!-- TABS -->
+
+                <div class="tabs">
+
+                    <button class="tab active" id="loginTab">
+                        Login
+                    </button>
+
+                    <button class="tab" id="signupTab">
+                        Sign Up
+                    </button>
+
+                </div>
+
+
+                <!-- ================= LOGIN FORM ================= -->
+
+                <form id="loginForm" class="form">
+
+                    <label>Email Address</label>
+
+                    <div class="input-box">
+                        <span>✉</span>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="forgot">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+
+                    <button type="submit" class="main-btn">
+                        Login <span>→</span>
+                    </button>
+
+
+                    <div class="divider">
+                        <span></span>
+                        <p>OR</p>
+                        <span></span>
+                    </div>
+
+
+                    <button type="button" class="social-btn">
+                        <b>G</b>
+                        Continue with Google
+                    </button>
+
+
+                    <button type="button" class="social-btn">
+                        <b>◉</b>
+                        Continue with GitHub
+                    </button>
+
+
+                    <p class="switch-text">
+                        Don't have an account?
+                        <span id="signupText">Sign Up</span>
+                    </p>
+
+                </form>
+
+
+                <!-- ================= SIGNUP FORM ================= -->
+
+                <form id="signupForm" class="form hidden">
+
+                    <label>Full Name</label>
+
+                    <div class="input-box">
+
+                        <span>👤</span>
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <label>Email Address</label>
+
+                    <div class="input-box">
+
+                        <span>✉</span>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button type="submit" class="main-btn">
+                        Create Account <span>→</span>
+                    </button>
+
+
+                    <p class="switch-text">
+                        Already have an account?
+                        <span id="loginText">Login</span>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="auth.js"></script>
+
+</body>
+</html>

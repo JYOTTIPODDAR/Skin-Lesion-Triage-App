@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkinTriage | Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <div class="logo-icon">◇</div>
+
+                <div>
+                    <h2>SkinTriage</h2>
+                    <p>Assess. Understand. Take Action.</p>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="nav-menu">
+
+                <a href="#" class="nav-item active">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>⇧</span>
+                    Analyze Skin
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>◷</span>
+                    My History
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>♙</span>
+                    Profile
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+            </nav>
+
+            <button class="logout-btn" id="logoutBtn">
+                🚪 Logout
+            </button>
+
+            <div class="sidebar-bottom">
+
+
+            <div class="sidebar-bottom">
+
+                <p>🌿</p>
+
+                <span>
+                    Healthier Skin<br>
+                    Brighter Tomorrow
+                </span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div></div>
+
+                <div class="user-section">
+
+                    <span id="welcomeUser">
+                        Hello!
+                    </span>
+
+                    <div class="profile-circle">
+                        J
+                    </div>
+
+                    <span class="notification">🔔</span>
+
+                </div>
+
+            </header>
+
+
+            <!-- DASHBOARD CONTENT -->
+
+            <section class="dashboard-content">
+
+
+                <!-- WELCOME BANNER -->
+
+                <div class="welcome-banner">
+
+                    <div>
+
+                        <h1>
+                            Welcome back, <span id="userName">User</span>! 👋
+                        </h1>
+
+                        <p>
+                            Take control of your skin health with AI-powered insights.
+                        </p>
+
+                        <em>
+                            "Early awareness leads to healthier tomorrows."
+                        </em>
+
+                    </div>
+
+                    <div class="banner-decoration">
+                        🌿
+                    </div>
+
+                </div>
+
+
+                <!-- ================= STATS ================= -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">🖼️</div>
+
+                        <div>
+                            <h2>0</h2>
+                            <p>Analyzed Images</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">📄</div>
+
+                        <div>
+                            <h2>0</h2>
+                            <p>Reports Generated</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">🕒</div>
+
+                        <div>
+                            <h2>0</h2>
+                            <p>Days Active</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card ai-card">
+
+                        <div class="stat-icon">🛡️</div>
+
+                        <div>
+                            <h2>AI-Powered</h2>
+                            <p>Accurate & Reliable</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= MIDDLE SECTION ================= -->
+
+                <div class="middle-grid">
+
+
+                    <!-- ANALYZE CARD -->
+
+                    <div class="analyze-card">
+
+                        <div class="card-title">
+
+                            <span class="big-icon">☁️</span>
+
+                            <div>
+
+                                <h2>Analyze Your Skin</h2>
+
+                                <p>
+                                    Upload an image of your skin lesion to get an AI-powered analysis.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="upload-btn" id="uploadBtn">
+
+                            ⇧ Upload Image
+
+                        </button>
+
+                        <p class="file-info">
+                            Supports: JPG, PNG, JPEG (Max 5MB)
+                        </p>
+
+                    </div>
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <div class="quick-card">
+
+                        <h2>Quick Actions</h2>
+
+                        <div class="quick-item">
+
+                            <span>⇧</span>
+
+                            <div>
+                                <h3>New Analysis</h3>
+                                <p>Upload and analyze an image</p>
+                            </div>
+
+                            <b>›</b>
+
+                        </div>
+
+
+                        <div class="quick-item">
+
+                            <span>◷</span>
+
+                            <div>
+                                <h3>View History</h3>
+                                <p>Check your previous reports</p>
+                            </div>
+
+                            <b>›</b>
+
+                        </div>
+
+
+                        <div class="quick-item">
+
+                            <span>♙</span>
+
+                            <div>
+                                <h3>Edit Profile</h3>
+                                <p>Update your information</p>
+                            </div>
+
+                            <b>›</b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= BOTTOM SECTION ================= -->
+
+                <div class="bottom-grid">
+
+
+                    <!-- RECENT ANALYSES -->
+
+                    <div class="recent-card">
+
+                        <h2>◷ Recent Analyses</h2>
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">📄</div>
+
+                            <h3>No analyses yet</h3>
+
+                            <p>
+                                Start by uploading an image to see your results here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SKIN TIPS -->
+
+                    <div class="tips-card">
+
+                        <div class="tips-header">
+
+                            <h2>💡 Skin Care Tips</h2>
+
+                            <a href="#">View All ›</a>
+
+                        </div>
+
+
+                        <ul>
+
+                            <li>✓ Use sunscreen daily (SPF 30+)</li>
+
+                            <li>✓ Keep your skin clean and moisturized</li>
+
+                            <li>✓ Avoid excessive sun exposure</li>
+
+                            <li>✓ Check for changes in moles or skin lesions</li>
+
+                            <li>✓ Consult a dermatologist for any concerns</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

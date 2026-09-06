@@ -174,7 +174,7 @@
 
 
                     <div class="forgot">
-                        <a href="#">Forgot Password?</a>
+                        <a href="#" id="forgotPasswordLink">Forgot Password?</a>
                     </div>
 
 
@@ -273,6 +273,55 @@
                     </p>
 
                 </form>
+                <!-- ================= FORGOT PASSWORD FORM ================= -->
+
+                <form id="forgotPasswordForm" class="form hidden">
+
+                    <h2>Reset Password</h2>
+
+                    <p class="auth-subtitle">
+                        Enter your email and create a new password.
+                    </p>
+
+                    <label>Email Address</label>
+
+                    <div class="input-box">
+                        <span>✉</span>
+
+                        <input
+                            type="email"
+                            id="forgotEmail"
+                            placeholder="Enter your registered email"
+                            required
+                        >
+                    </div>
+
+
+                    <label>New Password</label>
+
+                    <div class="input-box">
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="Enter your new password"
+                            required
+                        >
+                    </div>
+
+
+                    <button type="submit" class="main-btn">
+                        Reset Password <span>→</span>
+                    </button>
+
+
+                    <p class="switch-text">
+                        Remember your password?
+                        <span id="backToLogin">Login</span>
+                    </p>
+
+                </form>
 
             </div>
 
@@ -281,7 +330,7 @@
     </div>
 
 
-    <script src="auth.js"></script>
-
+    
 </body>
 </html>
+<script src="auth.js"></script>

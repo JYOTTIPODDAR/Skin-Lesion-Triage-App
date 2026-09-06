@@ -18,6 +18,8 @@
 
         <aside class="sidebar">
 
+            <!-- LOGO -->
+
             <div class="logo">
 
                 <div class="logo-icon">◇</div>
@@ -30,7 +32,7 @@
             </div>
 
 
-            <!-- Navigation -->
+            <!-- NAVIGATION -->
 
             <nav class="nav-menu">
 
@@ -61,14 +63,15 @@
 
             </nav>
 
-            </nav>
+
+            <!-- LOGOUT -->
 
             <button class="logout-btn" id="logoutBtn">
                 🚪 Logout
             </button>
 
-            <div class="sidebar-bottom">
 
+            <!-- SIDEBAR BOTTOM -->
 
             <div class="sidebar-bottom">
 
@@ -112,7 +115,7 @@
             </header>
 
 
-            <!-- DASHBOARD CONTENT -->
+            <!-- ================= DASHBOARD CONTENT ================= -->
 
             <section class="dashboard-content">
 
@@ -124,7 +127,8 @@
                     <div>
 
                         <h1>
-                            Welcome back, <span id="userName">User</span>! 👋
+                            Welcome back,
+                            <span id="userName">User</span>! 👋
                         </h1>
 
                         <p>
@@ -224,11 +228,22 @@
                         </div>
 
 
+                        <!-- UPLOAD BUTTON -->
+
                         <button class="upload-btn" id="uploadBtn">
-
                             ⇧ Upload Image
-
                         </button>
+
+
+                        <!-- HIDDEN FILE INPUT -->
+
+                        <input
+                            type="file"
+                            id="imageInput"
+                            accept="image/png, image/jpeg, image/jpg"
+                            style="display: none;"
+                        >
+
 
                         <p class="file-info">
                             Supports: JPG, PNG, JPEG (Max 5MB)
@@ -242,6 +257,7 @@
                     <div class="quick-card">
 
                         <h2>Quick Actions</h2>
+
 
                         <div class="quick-item">
 
@@ -289,6 +305,11 @@
                 </div>
 
 
+                <!-- ================= ANALYSIS RESULT ================= -->
+
+                <div id="resultContainer" style="display: none;"></div>
+
+
                 <!-- ================= BOTTOM SECTION ================= -->
 
                 <div class="bottom-grid">
@@ -323,7 +344,9 @@
 
                             <h2>💡 Skin Care Tips</h2>
 
-                            <a href="#">View All ›</a>
+                            <a href="#">
+                                View All ›
+                            </a>
 
                         </div>
 
@@ -353,6 +376,8 @@
 
     </div>
 
+
+    <!-- JAVASCRIPT -->
 
     <script src="dashboard.js"></script>
 

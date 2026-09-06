@@ -36,8 +36,6 @@ async function getCurrentUser() {
         const data = await response.json();
 
 
-        // TOKEN INVALID OR EXPIRED
-
         if (!response.ok) {
 
             localStorage.removeItem("token");
@@ -51,13 +49,10 @@ async function getCurrentUser() {
         }
 
 
-        // ================================
         // SHOW USER NAME
-        // ================================
 
         document.getElementById("welcomeUser").textContent =
             `Hello, ${data.username}!`;
-
 
         document.getElementById("userName").textContent =
             data.username;
@@ -79,6 +74,7 @@ async function getCurrentUser() {
 
 }
 
+
 // ================================
 // LOGOUT
 // ================================
@@ -95,6 +91,249 @@ logoutBtn.addEventListener("click", function () {
 
 });
 
+
+// ================================
+// IMAGE UPLOAD & PREDICTION
+// ================================
+
+const uploadBtn = document.getElementById("uploadBtn");
+const imageInput = document.getElementById("imageInput");
+const resultContainer = document.getElementById("resultContainer");
+
+
+uploadBtn.addEventListener("click", function () {
+
+    imageInput.click();
+
+});
+
+
+imageInput.addEventListener("change", async function () {
+
+    const file = imageInput.files[0];
+
+    if (!file) return;
+
+
+    // CHECK FILE TYPE
+
+    if (!file.type.startsWith("image/")) {
+
+        alert("Please select a valid image!");
+
+        return;
+
+    }
+
+
+    // CHECK FILE SIZE
+
+    if (file.size > 5 * 1024 * 1024) {
+
+        alert("Image size must be less than 5MB!");
+
+        return;
+
+    }
+
+
+    // CREATE FORM DATA
+
+    const formData = new FormData();
+
+    formData.append("file", file);
+
+
+    // BUTTON LOADING
+
+    uploadBtn.textContent = "Analyzing...";
+
+    uploadBtn.disabled = true;
+
+
+    // HIDE OLD RESULT
+
+    resultContainer.style.display = "none";
+
+
+    try {
+
+        const response = await fetch(
+
+            `${API_URL}/prediction/predict`,
+
+            {
+                method: "POST",
+                body: formData
+            }
+
+        );
+
+
+        const data = await response.json();
+
+
+        // =====================================
+        // SUCCESSFUL RESPONSE
+        // =====================================
+
+        if (response.ok) {
+
+
+            // INVALID / UNCERTAIN IMAGE
+
+            if (data.valid_image === false) {
+
+                resultContainer.innerHTML = `
+                    <div class="result-card invalid-result">
+
+                        <h2>⚠️ Unable to Analyze Image</h2>
+
+                        <p>${data.message}</p>
+
+                        <p class="confidence">
+                            Confidence: ${data.confidence}%
+                        </p>
+
+                        <p>
+                            Please upload a clear close-up image of a skin lesion.
+                        </p>
+
+                    </div>
+                `;
+
+                resultContainer.style.display = "block";
+
+                return;
+
+            }
+
+
+            // =====================================
+            // RISK COLOR
+            // =====================================
+
+            let riskClass = "";
+
+            if (data.risk_level === "LOW") {
+
+                riskClass = "low-risk";
+
+            } else if (data.risk_level === "MEDIUM") {
+
+                riskClass = "medium-risk";
+
+            } else if (data.risk_level === "HIGH") {
+
+                riskClass = "high-risk";
+
+            }
+
+
+            // =====================================
+            // SHOW RESULT
+            // =====================================
+
+            resultContainer.innerHTML = `
+
+                <div class="result-card ${riskClass}">
+
+                    <h2>🔍 Skin Analysis Result</h2>
+
+                    <div class="result-row">
+
+                        <span>Prediction:</span>
+
+                        <strong>${data.prediction}</strong>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <span>Risk Level:</span>
+
+                        <strong>${data.risk_level}</strong>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <span>Confidence:</span>
+
+                        <strong>${data.confidence}%</strong>
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <h3>${data.result_title}</h3>
+
+
+                    <p class="recommendation">
+
+                        ${data.recommendation}
+
+                    </p>
+
+
+                    <div class="disclaimer">
+
+                        ⚕️ ${data.disclaimer}
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            resultContainer.style.display = "block";
+
+
+            // RESULT TAKES USER TO CARD
+
+            resultContainer.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+
+        } else {
+
+            alert(data.detail || "Prediction failed!");
+
+        }
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Cannot connect to prediction server!");
+
+    } finally {
+
+
+        // RESET BUTTON
+
+        uploadBtn.textContent = "⇧ Upload Image";
+
+        uploadBtn.disabled = false;
+
+        imageInput.value = "";
+
+    }
+
+});
+
+
+// ================================
 // CALL FUNCTION
+// ================================
 
 getCurrentUser();

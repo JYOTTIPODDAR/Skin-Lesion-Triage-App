@@ -757,3 +757,70 @@ body {
 .logout-btn:hover {
     background: #e8d7d7;
 }
+
+/* ================================
+   ANALYSIS RESULT
+================================ */
+
+#resultContainer {
+    margin-top: 25px;
+}
+
+.result-card {
+    padding: 25px;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.result-card h2 {
+    margin-bottom: 20px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.result-row span {
+    color: #666;
+}
+
+.result-row strong {
+    font-size: 17px;
+}
+
+.low-risk {
+    border-left: 7px solid #2e9e5b;
+}
+
+.medium-risk {
+    border-left: 7px solid #e6a700;
+}
+
+.high-risk {
+    border-left: 7px solid #d64545;
+}
+
+.invalid-result {
+    border-left: 7px solid #777;
+}
+
+.recommendation {
+    line-height: 1.7;
+    margin-top: 10px;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.confidence {
+    font-weight: bold;
+}

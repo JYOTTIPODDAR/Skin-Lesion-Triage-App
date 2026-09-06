@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+python-dotenv
+pwdlib[argon2]
+PyJWT
+email-validator
+
+passlib[bcrypt]
+python-jose[cryptography]
+
+tensorflow
+scikit-learn
+pillow
+matplotlib

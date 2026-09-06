@@ -1,1 +1,0 @@
-Skin Lesion Triage App - Backend
